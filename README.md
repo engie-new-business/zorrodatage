@@ -52,7 +52,7 @@ Your contract is deployed on the Ethereum blockchain!
 
 Using the ABI GO bindings and the Rockside client and transactor we can send transactions to our contract without worrying about the nonce or gas.
 
-To see how it is done, either look into this repository's code in `main.go` or examples in the [GO doc reference](https://godoc.org/github.com/rocksideio/rockside-sdk-go#pkg-examples).
+To see how it is done, either look into this repository's code in `main.go` or examples in the [GO doc reference](https://pkg.go.dev/github.com/rocksideio/rockside-sdk-go?tab=doc#pkg-overview).
 
 ## Read fingerprints on the blockchain
 
@@ -60,4 +60,4 @@ From our backend we want to read from our deployed contract, to check if a finge
 
 Using the Rockside GO client we can easily obtain a JSON RPC client, then feed it into a `ContractCaller` to call read-only method on our contract.
 
-To see how it is done, either look into this repository's code in `main.go` or examples in the [GO doc reference](https://godoc.org/github.com/rocksideio/rockside-sdk-go#pkg-examples).
+To see how it is done, either look into this repository's code in `main.go` or examples in the [GO doc reference](https://pkg.go.dev/github.com/rocksideio/rockside-sdk-go?tab=doc#pkg-overview).
