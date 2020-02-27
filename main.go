@@ -158,7 +158,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	txHash := rocksideTransactor.LookupRocksideTransactionHash(tx.Hash())
+	txHash := rocksideTransactor.ReturnRocksideTransactionHash(tx.Hash())
 
 	v := struct {
 		Fingerprint     string

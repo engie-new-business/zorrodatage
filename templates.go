@@ -27,8 +27,8 @@ var homePage = `<!DOCTYPE html>
         grid-area: footer;
         text-align: center;
     }
-    ul {
-        margin: 0;
+    legend {
+        margin-bottom: 0.5em;
     }
 
     .grid-container {
@@ -38,6 +38,7 @@ var homePage = `<!DOCTYPE html>
                 'nav main'
                 'footer footer';
         grid-column-gap: 2em;
+        grid-row-gap: 2em;
         grid-template-rows: auto 1fr auto;
         grid-template-columns: auto 1fr;
     }
@@ -67,22 +68,18 @@ var homePage = `<!DOCTYPE html>
             <div>
                 <h3>Store a proof of existence in the blockchain</h3>
                 <form class="pure-form" name="file-upload" action="/upload" method="post" enctype="multipart/form-data">
-                    <fieldset>
-                        <legend>Timestamp your file (less than 1M)</legend>
-                        <input type="file" id="file-input" required />
-                        <input type="submit" class="pure-button pure-button-primary" value="Upload" />
-                    </fieldset>
+					<legend>Timestamp your file (less than 1M)</legend>
+					<input type="file" id="file-input" required />
+					<input type="submit" class="pure-button pure-button-primary" value="Upload" />
                 </form>
                 <ul id="registered-result"></ul>
                 <p id="upload-error"></p>
             </div>
             <div>
                 <h3>Lookup a fingerprint already stored</h3>
-                <fieldset>
-                    <legend>Enter your fingerprint</legend>
-                    <input type="text" name="fingerprint" size="60" placeholder="ex: 09985b7c0618392bfa8caef726c6bfe0fda42f17360a43a62dbcc58c2ee613bf" required />
-                    <button type="submit" class="pure-button pure-button-primary" id="fingerprint-button">Check</button>
-                </fieldset>
+				<legend>Enter your fingerprint</legend>
+				<input type="text" name="fingerprint" size="60" placeholder="ex: 09985b7c0618392bfa8caef726c6bfe0fda42f17360a43a62dbcc58c2ee613bf" required />
+				<button type="submit" class="pure-button pure-button-primary" id="fingerprint-button">Check</button>
                 <ul id="stamp"></ul>
                 <p id="check-error"></p>
             </div>
@@ -102,11 +99,11 @@ var homePage = `<!DOCTYPE html>
             body: params,
         }).then( response => {
             document.querySelector("#check-error").innerHTML = "";
+			document.querySelector("#stamp").innerHTML = "";
             if(!response.ok) {throw response}
             return response.json();
         }).then( jsonData => {
             var result = document.querySelector("#stamp");
-            result.innerHTML = "";
             var hash = document.createElement("li");
             hash.innerHTML = "<li>Date: " + jsonData.Date+ "</li>";
             var fingerprint = document.createElement("li");
@@ -132,11 +129,11 @@ var homePage = `<!DOCTYPE html>
             body: formData,
         }).then( response => {
             document.querySelector("#upload-error").innerHTML = "";
+			document.querySelector("#registered-result").innerHTML = "";
             if(!response.ok) {throw response}
             return response.json();
         }).then( jsonData => {
             var result = document.querySelector("#registered-result");
-            result.innerHTML = "";
             var hash = document.createElement("li");
             hash.innerHTML = "Tx Hash: <a target=\"_blank\" href=" + jsonData.HashURL+ ">" + jsonData.TransactionHash + "</a>";
             var fingerprint = document.createElement("li");
