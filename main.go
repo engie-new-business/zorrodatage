@@ -29,7 +29,6 @@ var (
 	portFlag            = flag.String("port", "9000", "Listening port")
 	domainFlag          = flag.String("tls-domain", "", "Activates TLS on the given domain using acme (i.e. Let's Encrypt)")
 	mainnetFlag         = flag.Bool("mainnet", false, "Use Ethereum mainnet instead of testnet")
-	rocksideAPIFlag     = flag.String("api", "https://api.rockside.io", "Rockside API endpoint")
 	identityAddressFlag = flag.String("identity", os.Getenv("ROCKSIDE_IDENTITY"), "Rockside identity address")
 
 	rocksideClient          *rockside.Client
@@ -48,7 +47,7 @@ func main() {
 			contractAddress = common.HexToAddress("0x97cA295E85c997F7286F06E1d98B0939ff0D8aAA")
 		}
 		var err error
-		rocksideClient, err = rockside.NewClient(*rocksideAPIFlag, key, network)
+		rocksideClient, err = rockside.NewClient(key, network)
 		if err != nil {
 			log.Fatal(err)
 		}
