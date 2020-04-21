@@ -47,7 +47,7 @@ func main() {
 			contractAddress = common.HexToAddress("0x97cA295E85c997F7286F06E1d98B0939ff0D8aAA")
 		}
 		var err error
-		rocksideClient, err = rockside.NewClient(key, network)
+		rocksideClient, err = rockside.NewClientFromAPIKey(key, network)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -151,7 +151,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tx, err := contract.Register(rockside.TransactOpts(), fingerprint)
+	tx, err := contract.Register(rockside.TransactOptsWithoutReward(), fingerprint)
 	if err != nil {
 		log.Printf("cannot register: %s", err)
 		http.Error(w, fmt.Sprintf("cannot register fingerprint on the blockchain: %s", err), http.StatusInternalServerError)
@@ -167,7 +167,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	}{
 		Fingerprint:     fmt.Sprintf("%x", fingerprint),
 		TransactionHash: txHash,
-		HashURL:         fmt.Sprintf("%s/tx/%s", rocksideClient.CurrentNetwork().EtherscanURL(), txHash),
+		HashURL:         fmt.Sprintf("%s/tx/%s", rocksideClient.CurrentNetwork().ExplorerURL(), txHash),
 	}
 
 	enc := json.NewEncoder(w)

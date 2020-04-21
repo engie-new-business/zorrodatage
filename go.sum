@@ -167,14 +167,8 @@ github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150/go.mod h1:qhTCs0
 github.com/rjeczalik/notify v0.9.1 h1:CLCKso/QK1snAlnhNR/CNvNiFU2saUtjV0bx3EwNeCE=
 github.com/rjeczalik/notify v0.9.1/go.mod h1:rKwnCoCGeuQnwBtTSPL9Dad03Vh2n40ePRrjvIXnJho=
 github.com/robertkrimen/otto v0.0.0-20170205013659-6a77b7cbc37d/go.mod h1:xvqspoSXJTIpemEonrMDFq6XzwHYYgToXWj5eRX1OtY=
-github.com/rocksideio/rockside-sdk-go v0.0.8 h1:7NYIA2P+DiI3oY4s9ggJetdMyGNCieVt7m7bS9urSYo=
-github.com/rocksideio/rockside-sdk-go v0.0.8/go.mod h1:z9Cx9fcwJPcrUiZJERzRFWNwEpbX/dh02/xkDQblKEw=
-github.com/rocksideio/rockside-sdk-go v0.0.9 h1:68GgFOtNLTXxZJOZaVb9LZBM2BVk8i/nCcwQjqFVhGM=
-github.com/rocksideio/rockside-sdk-go v0.0.9/go.mod h1:z9Cx9fcwJPcrUiZJERzRFWNwEpbX/dh02/xkDQblKEw=
-github.com/rocksideio/rockside-sdk-go v0.0.10 h1:AuBMXa7YjcC9bdekCYNgYErgTcIAtI2FcIt7NQF4pAA=
-github.com/rocksideio/rockside-sdk-go v0.0.10/go.mod h1:z9Cx9fcwJPcrUiZJERzRFWNwEpbX/dh02/xkDQblKEw=
-github.com/rocksideio/rockside-sdk-go v0.0.11 h1:It3D5WtFUxWD2ZHN3rn/kPy/fkfMtIbbRmszGg+hym0=
-github.com/rocksideio/rockside-sdk-go v0.0.11/go.mod h1:z9Cx9fcwJPcrUiZJERzRFWNwEpbX/dh02/xkDQblKEw=
+github.com/rocksideio/rockside-sdk-go v0.0.18 h1:JY0mDwwCcYYzhfio69r6PpbRkReD1aMR+7Q+/X1pN7w=
+github.com/rocksideio/rockside-sdk-go v0.0.18/go.mod h1:z9Cx9fcwJPcrUiZJERzRFWNwEpbX/dh02/xkDQblKEw=
 github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00 h1:8DPul/X0IT/1TNMIxoKLwdemEOBBHDC/K4EB16Cw5WE=
 github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00/go.mod h1:gFx+x8UowdsKA9AchylcLynDq+nNFfI8FkUZdN/jGCU=
 github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521 h1:3hxavr+IHMsQBrYUPQM5v0CgENFktkkbg1sfpgM3h20=
